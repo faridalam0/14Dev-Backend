@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-app.set("trust proxy", 1);
 require('dotenv').config();
 
 const main = require('./config/db');
@@ -16,8 +15,8 @@ const cors = require('cors');
 // console.log("Hello")
 
 app.use(cors({
-  origin: "https://14dev-frontend.netlify.app",
-  credentials: true
+    origin: ['http://localhost:5173','https://14dev-frontend.netlify.app'],
+    credentials: true
 }));
 
 app.use(express.json());
